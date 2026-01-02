@@ -17,7 +17,7 @@ const projects = [
     description:
       "This project focuses on sustainable landuse planning to optimize the allocation of land resources for various socio-economic and environmental needs. Using GIS and remote sensing tools, current land use patterns were analyzed, and suitability analysis was conducted for residential, agricultural, industrial, and conservation zones. Key factors such as slope, soil type, accessibility, and proximity to infrastructure were considered. Multi-criteria decision analysis (MCDA) was used to prioritize land suitability. The final land use plan aims to support balanced development, reduce environmental degradation, and guide future urban expansion. Interactive spatial layers and thematic maps were generated to visualize results effectively. This project demonstrates how geospatial technologies can be used for data-driven policy-making and sustainable land management.",
     image: "image/Landuse.jpg",
-    tags: ["ArcGIs"],
+    tags: ["ArcGIS"],
     github: "",
     demo: "#"
   },
@@ -28,7 +28,7 @@ const projects = [
       "Executed comprehensive field surveys during academic training using Total Station, Theodolite, GNSS, and levelling equipment. The project involved capturing topographic and cadastral data for real-world mapping scenarios. Total Station was used for precise angle and distance measurements, while GNSS provided accurate georeferencing. Levelling was applied for elevation modeling and contour mapping. Additionally, drone-based photogrammetry and GPS surveys were conducted to enhance spatial data accuracy and coverage. Final outputs such as topographic maps, parcel boundaries, and elevation profiles—were produced using GIS software, supporting applications in land administration, urban planning, and infrastructure development.",
 
 
-    image: "",
+    image: "image/Engineering_Survey.jpg",
     tags: ["Arcmap", "TS"],
     github: "",
     demo: ""
@@ -125,3 +125,4 @@ window.onload = function () {
 };
 
 console.log("projects.js has loaded!");
+
