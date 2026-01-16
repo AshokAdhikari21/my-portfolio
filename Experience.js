@@ -1,5 +1,5 @@
 const communityData = [
-        {
+    {
         title: "Field Survey",
         event: "Bachelor-Level Academic Field Work",
         date: "July 2023",
@@ -29,15 +29,13 @@ const communityData = [
         description: "Assisted in GIS data processing, spatial analysis, and mapping for ongoing geomatics projects, gaining valuable practical industry experience. Conducted GPS surveys to collect accurate spatial data and prepared detailed maps for various applications. This experience strengthened my technical skills and understanding of real-world geomatics workflows.",
         image: "image/community/emcee.jpg"
     },
-        {
+    {
         title:"Municipal Digital Profile",
         event: "Freelancer Work",
         date: "June 2025",
         description: "Developed a digital municipal profile using GIS tools. Collected, processed, and visualized spatial data for infrastructure and land use planning. Created thematic maps to support local governance. Improved skills in GIS mapping and community-level data management. Ensured data accuracy through field verification and stakeholder consultation.",
         image: "image/community/emcee.jpg"
     },
-
-
 ];
 
 function loadCommunityItems() {
@@ -46,21 +44,20 @@ function loadCommunityItems() {
 
     communityData.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'group relative overflow-hidden rounded-lg bg-[#222222] transform transition-all duration-300 hover:scale-105 p-4 w-full sm:w-[48%] lg:w-[31%]';
+        card.className = 'group relative overflow-hidden rounded-lg bg-[#1e293b] transform transition-all duration-300 hover:scale-105 p-4 w-full sm:w-[48%] lg:w-[31%]';
 
         card.innerHTML = `
             <div class="flex flex-col justify-start h-full">
-                <span class="text-[#E06031] font-researcher text-sm">${item.date}</span>
+                <span class="text-[#3b82f6] font-researcher text-sm">${item.date}</span>
                 <h3 class="text-white font-bold text-xl mt-2 mb-1 font-researcher">${item.title}</h3>
                 <p class="text-gray-300 text-sm mb-2 leading-relaxed">${item.description}</p>
-                <h4 class="text-[#E06031] text-md font-medium">${item.event}</h4>
+                <h4 class="text-[#3b82f6] text-md font-medium">${item.event}</h4>
             </div>
         `;
 
         container.appendChild(card);
     });
 }
-
 
 // Load community items when the DOM is ready
 document.addEventListener('DOMContentLoaded', loadCommunityItems);
