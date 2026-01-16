@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scrollbar-width: thin;
-    scrollbar-color: #E06031 #1A1A1A;
+    scrollbar-color: #3b82f6 #0f172a; /* Blue on dark blue */
 }
 
 /* Optimize animations */
@@ -30,11 +30,11 @@
 
 body {
     min-height: 100vh;
-    background-color: #1D1D22;
-    font-family: Arial, sans-serif;
+    background-color: #2f4b8b; /* Dark blue */
+    font-family: 'Inter', Arial, sans-serif;
     color: white;
-    overflow-x: hidden; /* Add this to prevent horizontal scroll */
-    width: 100%; /* Ensure body takes full width */
+    overflow-x: hidden;
+    width: 100%;
     position: relative;
 }
 
@@ -49,18 +49,34 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #1A1A1A;
+    background: #0f172a; /* Dark blue */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #E06031;
+    background: #3b82f6; /* Blue */
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #c15129;
+    background: #2563eb; /* Darker blue */
 }
 
+/* Hide the name "Ashok Adhikari | Geomatics Engineer" */
+.header-name, 
+.website-title,
+.site-title,
+.page-title,
+.name-title,
+.header-text {
+    display: none !important;
+}
+
+/* Alternative: If the name is in an h1 or specific element at the top */
+body > h1:first-of-type,
+.container > h1:first-child,
+header > h1 {
+    display: none !important;
+}
 
 .nav {
     height: 3.2rem;
@@ -86,7 +102,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: #E06031;
+    color: #3b82f6; /* Blue */
 }
 
 .shok {
@@ -101,7 +117,7 @@ body {
 }
 
 .text-gradient {
-    background: linear-gradient(45deg, #E06031, #ff8f6b);
+    background: linear-gradient(45deg, #3b82f6, #0ea5e9); /* Blue gradient */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -124,7 +140,7 @@ p {
 }
 
 #line-break {
-    margin-bottom: 10px; /* Adjust the value as needed */
+    margin-bottom: 10px;
 }
 
 #changing-text, #role-image {
@@ -153,35 +169,25 @@ p {
     backface-visibility: hidden;
 }
 
-
-/* Add these styles after your existing navbar styles */
-
-
-/* Image styling */
-
-
 /* Project description */
 #project-container p {
   text-align: justify;
-  
   font-size: 0.95rem;
   line-height: 1.6;
-  
-  color: #d1d5db; /* Tailwind’s gray-300 */
+  color: #d1d5db;
 }
+
 #community-container {
   display: flex;
   flex-wrap: wrap;
-  text-align:justify;
-  justify-content: space-between; /* Or use 'center', 'start', etc. */
+  text-align: justify;
+  justify-content: space-between;
   gap: 1rem;
   width: 100%;
-  max-width: 1200px; /* Optional: control max width */
-  margin: 0 auto;     /* Center container */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
-}              /* Removing the image of professional experience and only adding the description so , the container become narrow- for making the width justify adding the container in css*/
-
-
+}
 
 @media (max-width: 768px) {
     .nav {
@@ -227,8 +233,6 @@ p {
 }
 
 /* Add performance optimizations */
-
-/* Optimize paint and layout operations */
 .transform, .transition {
     will-change: transform;
 }
@@ -248,7 +252,6 @@ p {
     animation: blink 0.7s infinite;
 }
 
-
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -256,6 +259,6 @@ p {
 
 @media (min-width: 960px) and (max-width: 990px) {
     .hero-image-container {
-        padding-left: 4rem !important; /* Force stronger left padding for this specific width */
+        padding-left: 4rem !important;
     }
 }
