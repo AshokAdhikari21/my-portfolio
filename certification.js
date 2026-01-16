@@ -1,264 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: #3b82f6 #0f172a; /* Blue on dark blue */
-}
-
-/* Optimize animations */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-@font-face {
-    font-family: 'Yapari';
-    src: url('Yaparivariable-ultra.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Researcher';
-    src: url('researcherfontregular.ttf') format('truetype');
-}
-
-body {
-    min-height: 100vh;
-    background-color: #2f4b8b; /* Dark blue */
-    font-family: 'Inter', Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-}
-
-.container {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-/* Custom Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0f172a; /* Dark blue */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3b82f6; /* Blue */
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #2563eb; /* Darker blue */
-}
-
-/* Hide the name "Ashok Adhikari | Geomatics Engineer" */
-.header-name, 
-.website-title,
-.site-title,
-.page-title,
-.name-title,
-.header-text {
-    display: none !important;
-}
-
-/* Alternative: If the name is in an h1 or specific element at the top */
-body > h1:first-of-type,
-.container > h1:first-child,
-header > h1 {
-    display: none !important;
-}
-
-.nav {
-    height: 3.2rem;
-    display: flex;
-    color: white;
-}
-
-.nav-menu ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-menu li {
-    list-style: none;
-    margin-right: 20px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-}
-
-.nav-menu a:hover {
-    color: #3b82f6; /* Blue */
-}
-
-.shok {
-    width: 150px;
-    height: 100%;
-    border-radius: 50%;
-    justify-content: center;
-}
-
-.text-content {
-    max-width: 600px;
-}
-
-.text-gradient {
-    background: linear-gradient(45deg, #3b82f6, #0ea5e9); /* Blue gradient */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-h1 {
-    font-family: Arial, sans-serif;
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-p {
-    margin-top: 10px;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-#changing-text {
-    transition: opacity 0.3s ease-in-out;
-}
-
-#line-break {
-    margin-bottom: 10px;
-}
-
-#changing-text, #role-image {
-    transition: opacity 0.2s ease-in-out;
-    opacity: 1;
-}
-
-/* Art Section Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.art-item {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Ensures smooth image scaling */
-.art-item img {
-    backface-visibility: hidden;
-}
-
-/* Project description */
-#project-container p {
-  text-align: justify;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #d1d5db;
-}
-
-#community-container {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: justify;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-@media (max-width: 768px) {
-    .nav {
-        padding: 1rem;
-    }
+// certificate.js - Contains certificate data and rendering logic with new color theme
+// Certificate Data
+const certificates = [
+    {
+      id: 1,
+      title: "GIS Workshop",
+      event: "May, 2024",
+      image: "image/ashok1.png",
+      alt: "GIS Workshop Certificate"
+    },
+    {
+      id: 2,
+      title: "UAV Drone Surveying",
+      event: "May, 2024",
+      image: "image/ashok2.png",
+      alt: "Drone Surveying Certificate"
+    },
+    {
+      id: 3,
+      title: "Google Earth Engine",
+      event: "July, 2024",
+      image: "image/ashok3.png",
+      alt: "Google Earth Engine Certificate"
+    },
+  ];
+  
+  // Rendering function - Executes when the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    const awardContainer = document.getElementById('award-container');
     
-    #mobileMenu {
-        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    // If the container exists, render all awards
+    if (awardContainer) {
+      // Generate HTML for each certificate
+      const certificatesHTML = certificates.map(cert => {
+        // Return complete certificate card HTML with new theme
+        return `
+        <div class="bg-[#1e293b] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-[#3b82f6]/30">
+          <div class="relative overflow-hidden">
+            <img src="${cert.image}" alt="${cert.alt}" class="w-full h-48 object-cover transform group-hover:scale-110 transition-all duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-[#3b82f6] font-inter font-bold text-xl mb-2">${cert.title}</h3>
+            <h4 class="text-gray-400 font-inter text-lg mb-2">${cert.event}</h4>
+          </div>
+        </div>
+        `;
+      }).join('');
+      
+      // Insert all certificates into the container
+      awardContainer.innerHTML = certificatesHTML;
+      console.log("Certificates rendered successfully!");
     }
-    
-    #mobileMenu a {
-        font-size: 1.1rem;
-        transition: color 0.3s ease;
-    }
-}
-
-/* Media Queries */
-@media (max-width: 640px) {
-    h1 {
-        font-size: 2rem;
-        word-break: break-word;
-    }
-    
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    #aboutme, #award, #arts {
-        padding-top: 3rem;
-    }
-    
-    .grid {
-        gap: 1rem;
-    }
-}
-
-/* Fix for mobile Safari */
-@supports (-webkit-touch-callout: none) {
-    .min-h-screen {
-        min-height: -webkit-fill-available;
-    }
-}
-
-/* Add performance optimizations */
-.transform, .transition {
-    will-change: transform;
-}
-
-/* Add content-visibility for better performance */
-.card {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
-}
-
-/* Typewriter cursor effect */
-.cursor::after {
-    content: '|';
-    display: inline-block;
-    margin-left: 3px;
-    opacity: 1;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-@media (min-width: 960px) and (max-width: 990px) {
-    .hero-image-container {
-        padding-left: 4rem !important;
-    }
-}
+  });
+  
+  // Log a simple message to confirm the script has loaded
+  console.log("certificate.js has loaded!");
