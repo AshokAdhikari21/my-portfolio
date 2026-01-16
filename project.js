@@ -3,11 +3,11 @@
 const projects = [
   {
     id: 1,
-    title: "Landslide Suspceptibility Mapping",
+    title: "Landslide Susceptibility Mapping",
     description:
       "This project focuses on mapping landslide susceptibility in the Butwal-Tansen section of the Siddhartha Highway using three statistical and machine learning models: Frequency Ratio (FR), Logistic Regression (LR), and Random Forest (RF). A landslide inventory was created using historical landslide data, and various conditioning factors like slope, geology, land use, and rainfall were analyzed. Each model was applied to identify high-risk areas and evaluate their predictive accuracy. The results were validated using ROC curves and AUC values. Among the models, Random Forest showed the highest prediction performance. The final susceptibility maps can support disaster risk management and infrastructure planning in the region.",
     image: "image/project.jpg",
-    tags: ["Remote Sensing", "ArcGis"],
+    tags: ["Remote Sensing", "ArcGIS"],
     github: "",
     demo: "#"
   },
@@ -26,12 +26,10 @@ const projects = [
     title: "Engineering Survey Project",
     description:
       "Executed comprehensive field surveys during academic training using Total Station, Theodolite, GNSS, and levelling equipment. The project involved capturing topographic and cadastral data for real-world mapping scenarios. Total Station was used for precise angle and distance measurements, while GNSS provided accurate georeferencing. Levelling was applied for elevation modeling and contour mapping. Additionally, drone-based photogrammetry and GPS surveys were conducted to enhance spatial data accuracy and coverage. Final outputs such as topographic maps, parcel boundaries, and elevation profiles—were produced using GIS software, supporting applications in land administration, urban planning, and infrastructure development.",
-
-
     image: "image/Engineering_Survey.jpg",
     tags: ["Arcmap", "TS"],
     github: "",
-    demo: ""
+    demo: "#"
   }
 ];
 
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded, running projects.js...");
 
   const projectContainer = document.getElementById("project-container");
-  
 
   if (projectContainer) {
     console.log("Project container found, rendering projects...");
@@ -51,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const tagsHTML = project.tags
             .map(
               (tag) =>
-                `<span class="bg-[#E06031] text-white text-xs px-2 py-1 rounded">${tag}</span>`
+                `<span class="bg-[#3b82f6] text-white text-xs px-2 py-1 rounded">${tag}</span>`
             )
             .join(" ");
 
@@ -60,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             project.github.trim() !== "#" &&
             project.github.trim() !== ""
               ? `
-            <a href="${project.github}" target="_blank" class="text-gray-400 hover:text-[#E06031] transition-colors duration-300">
+            <a href="${project.github}" target="_blank" class="text-gray-400 hover:text-[#3b82f6] transition-colors duration-300">
               <i class="fab fa-github"></i>
             </a>`
               : "";
@@ -70,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             project.demo.trim() !== "#" &&
             project.demo.trim() !== ""
               ? `
-            <a href="${project.demo}" target="_blank" class="text-gray-400 hover:text-[#E06031] transition-colors duration-300">
+            <a href="${project.demo}" target="_blank" class="text-gray-400 hover:text-[#3b82f6] transition-colors duration-300">
               <i class="fas fa-external-link-alt"></i>
             </a>`
               : "";
@@ -81,17 +78,17 @@ document.addEventListener("DOMContentLoaded", function () {
               : "";
 
           return `
-          <div class="group bg-[#252525] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+          <div class="group bg-[#1e293b] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-[#3b82f6]/30">
             <div class="relative overflow-hidden">
               <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover transform group-hover:scale-110 transition-all duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
               <div class="absolute top-4 right-4 space-x-2">
                 ${tagsHTML}
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-[#E06031] font-poppins font-bold text-xl mb-2">${project.title}</h3>
-              <p class="text-gray-400 font-poppins font-medium text-sm mb-4">${project.description}</p>
+              <h3 class="text-[#3b82f6] font-inter font-bold text-xl mb-2">${project.title}</h3>
+              <p class="text-gray-400 font-inter font-medium text-sm mb-4">${project.description}</p>
               <div class="flex justify-between items-center">
                 ${actionIcons}
               </div>
@@ -125,4 +122,3 @@ window.onload = function () {
 };
 
 console.log("projects.js has loaded!");
-
